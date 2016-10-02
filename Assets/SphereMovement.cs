@@ -20,5 +20,9 @@ public class SphereMovement : MonoBehaviour {
 
         transform.position = transform.position + (direction * Time.deltaTime * speed);
 
+
     }
+
+
+
 }
