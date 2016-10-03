@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SphereMovement : MonoBehaviour {
 
     public float minSpeed;
     public float maxSpeed;
     public GameObject center;
+    public Text scoreText;
+    private static int score;
 
     // Use this for initialization
     void Start() {
@@ -28,7 +31,8 @@ public class SphereMovement : MonoBehaviour {
 
         if (col.gameObject.tag == "Bullet") {
             Destroy(gameObject);
-            // Score += 1;
+            score += 1;
+            scoreText.text = "Score: " + score;
         }
 
     }
