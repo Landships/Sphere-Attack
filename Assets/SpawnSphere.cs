@@ -9,8 +9,6 @@ public class SpawnSphere : MonoBehaviour {
 
     public int minSpawnDistance = 30;
     public int maxSpawnDistance = 50;
-    public int minSpeed = 1;
-    public int maxSpeed = 3;
     public float spawnTime = .5f;
 
     private float timeLeft;
