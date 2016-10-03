@@ -332,6 +332,7 @@ GameObject:
   - 4: {fileID: 4000010405697166}
   - 114: {fileID: 114000012770665790}
   - 114: {fileID: 114000010214981174}
+  - 114: {fileID: 114000010776547506}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -1343,6 +1344,25 @@ MonoBehaviour:
   head: {fileID: 4000011262192364}
   leftHand: {fileID: 4000011328421998}
   rightHand: {fileID: 4000014090636464}
+--- !u!114 &114000010776547506
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012549134614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fab58d8cffb2a941a40241481f15aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  headLerpPosRate: 5
+  headLerpRotRate: 5
+  handLerpPosRate: 5
+  handLerpRotRate: 5
+  keepThresholdPos: 5
+  keepThresholdRot: 5
+  syncLeftPos: {x: 0, y: 0, z: 0}
+  syncRightPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114000012770665790
 MonoBehaviour:
   m_ObjectHideFlags: 1

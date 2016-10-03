@@ -50,7 +50,7 @@ public class Init : NetworkBehaviour
             cameraHead = cameraRig.transform.GetChild(2).gameObject;
             cameraLeft = cameraRig.transform.GetChild(0).gameObject;
             cameraRight = cameraRig.transform.GetChild(1).gameObject;
-            //InitPlayer();
+            InitPlayer();
         }
 
         else
@@ -60,14 +60,14 @@ public class Init : NetworkBehaviour
     }
 
 
-    /*
+    
     void InitPlayer()
     {
         GetComponent<Movement>().InitMovement(cameraHead, cameraLeft, cameraRight, head, leftHand, rightHand);
-        Events.AssignControllers(cameraLeft, cameraRight);
-        HandEvent[] handevents = GetComponentsInChildren<HandEvent>();
-        handevents[0].AssignEvents(Events);
-        handevents[1].AssignEvents(Events);
+        //Events.AssignControllers(cameraLeft, cameraRight);
+        //HandEvent[] handevents = GetComponentsInChildren<HandEvent>();
+       // handevents[0].AssignEvents(Events);
+        //handevents[1].AssignEvents(Events);
     }
 
     void InitListener()
