@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
-public class SphereMovement : MonoBehaviour {
+public class SphereMovement : NetworkBehaviour {
 
     public float minSpeed;
     public float maxSpeed;
@@ -30,13 +31,15 @@ public class SphereMovement : MonoBehaviour {
     void OnTriggerEnter(Collider col) {
 
         if (col.gameObject.tag == "Bullet") {
-            Destroy(gameObject);
+			CmdDestroy ();
             score += 1;
             scoreText.text = "Score: " + score;
         }
 
     }
 
-
-
+	[Command]
+	void CmdDestroy() {
+		Destroy(gameObject);
+	}
 }
