@@ -13,7 +13,7 @@ public class SphereMovement : NetworkBehaviour {
 
     // Use this for initialization
     void Start() {
-
+        center = GameObject.FindGameObjectWithTag("Center");
     }
 
     // Update is called once per frame
@@ -38,8 +38,15 @@ public class SphereMovement : NetworkBehaviour {
 
     }
 
-	[Command]
-	void CmdDestroy() {
+	[Server]
+	public void CmdDestroy() {
+        RpcClientDestroy();
 		Destroy(gameObject);
+        Debug.Log("spheremovement");
 	}
+
+    [ClientRpc]
+    void RpcClientDestroy() {
+        Destroy(gameObject);
+    }
 }

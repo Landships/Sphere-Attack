@@ -27,7 +27,8 @@ public class SpawnSphere : NetworkBehaviour {
 	void Update () {
 
         if (timeLeft <= 0) {
-			CmdSpawnSphere ();
+            //CmdSpawnSphere ();
+            SpawnS();
             timeLeft = spawnTime;
 
         } else {
@@ -36,8 +37,21 @@ public class SpawnSphere : NetworkBehaviour {
 
         }
     }
+    [Server]
+    void SpawnS() {
+        Vector3 spawn_loc = (Random.Range(minSpawnDistance, maxSpawnDistance) * Random.insideUnitSphere) + center.transform.position;
+        while (spawn_loc.y < center.transform.position.y) {
+            spawn_loc = Random.Range(minSpawnDistance, maxSpawnDistance) * Random.insideUnitSphere;
+        }
 
-	[Command]
+        GameObject sphereClone = Instantiate(sphere, spawn_loc, sphere.transform.rotation) as GameObject;
+        NetworkServer.Spawn(sphereClone);
+        sphereClone.SetActive(true);
+        //sphereClone.GetComponent<SpawnSphere> ().SetAc
+        //Destroy(sphereClone, 1.0f);
+    }
+
+    [Command]
 	void CmdSpawnSphere() {
 		Vector3 spawn_loc = (Random.Range(minSpawnDistance, maxSpawnDistance) * Random.insideUnitSphere) + center.transform.position;
 		while (spawn_loc.y < center.transform.position.y) {
@@ -47,7 +61,9 @@ public class SpawnSphere : NetworkBehaviour {
 		GameObject sphereClone = Instantiate(sphere, spawn_loc, sphere.transform.rotation) as GameObject;
 		NetworkServer.Spawn(sphereClone);
 		sphereClone.SetActive(true);
-		//sphereClone.GetComponent<SpawnSphere> ().SetAc
+        //sphereClone.GetComponent<SpawnSphere> ().SetAc
+        Destroy(sphereClone, 1.0f);
+        Debug.Log("testing");
 	}
 
     

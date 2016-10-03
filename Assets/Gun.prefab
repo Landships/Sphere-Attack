@@ -41,6 +41,7 @@ GameObject:
   - 135: {fileID: 135000013900163846}
   - 23: {fileID: 23000011362551008}
   - 54: {fileID: 54000010754579592}
+  - 114: {fileID: 114000010883555332}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -313,6 +314,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.08, y: 0.05, z: 0.14}
   m_Center: {x: 0, y: 0, z: -0.05}
+--- !u!114 &114000010883555332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011636698214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 246
+    i1: 230
+    i2: 227
+    i3: 132
+    i4: 118
+    i5: 131
+    i6: 180
+    i7: 228
+    i8: 57
+    i9: 253
+    i10: 134
+    i11: 211
+    i12: 24
+    i13: 28
+    i14: 115
+    i15: 236
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114000011536771104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -356,6 +389,7 @@ MonoBehaviour:
   allowedUseControllers: 0
   hideControllerOnUse: 0
   usingState: 0
+  spawner: {fileID: 0}
 --- !u!135 &135000013900163846
 SphereCollider:
   m_ObjectHideFlags: 1

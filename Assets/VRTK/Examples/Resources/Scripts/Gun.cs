@@ -5,7 +5,7 @@
 
 	public class Gun : VRTK_InteractableObject
     {
-        private GameObject bullet;
+        public GameObject bullet;
         private float bulletSpeed = 1000f;
         private float bulletLife = 5f;
 		public BulletSpawner spawner;
