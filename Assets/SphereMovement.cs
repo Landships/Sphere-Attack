@@ -24,5 +24,15 @@ public class SphereMovement : MonoBehaviour {
     }
 
 
+    void OnTriggerEnter(Collider col) {
+
+        if (col.gameObject.tag == "Bullet") {
+            Destroy(gameObject);
+            // Score += 1;
+        }
+
+    }
+
+
 
 }
