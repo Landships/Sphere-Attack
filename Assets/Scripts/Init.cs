@@ -70,7 +70,7 @@ public class Init : NetworkBehaviour
         //handevents[1].AssignEvents(Events);
     }
 
-    void InitListener()
+    /*void InitListener()
     {
         GetComponent<Movement>().InitMovement(head, leftHand, rightHand);
         HandEvent[] handevents = GetComponentsInChildren<HandEvent>();

@@ -215,7 +215,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014090636464}
-  - 114: {fileID: 114000013973460738}
   m_Layer: 0
   m_Name: Right
   m_TagString: Untagged
@@ -299,7 +298,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011328421998}
-  - 114: {fileID: 114000013458722910}
   m_Layer: 0
   m_Name: Left
   m_TagString: Untagged
@@ -1395,30 +1393,6 @@ MonoBehaviour:
     i15: 154
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
---- !u!114 &114000013458722910
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012422093298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28529963443591c45a62d3a088571b1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hand: 1
---- !u!114 &114000013973460738
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011850116764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28529963443591c45a62d3a088571b1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hand: 1
 --- !u!136 &136000010552984386
 CapsuleCollider:
   m_ObjectHideFlags: 1
