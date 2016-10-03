@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class SpawnSphere : MonoBehaviour {
+public class SpawnSphere : NetworkBehaviour {
 
     public GameObject center;
 
@@ -26,16 +27,7 @@ public class SpawnSphere : MonoBehaviour {
 	void Update () {
 
         if (timeLeft <= 0) {
-
-            Vector3 spawn_loc = (Random.Range(minSpawnDistance, maxSpawnDistance) * Random.insideUnitSphere) + center.transform.position;
-            while (spawn_loc.y < center.transform.position.y) {
-                spawn_loc = Random.Range(minSpawnDistance, maxSpawnDistance) * Random.insideUnitSphere;
-            }
-
-            GameObject sphereClone = Instantiate(sphere, spawn_loc, sphere.transform.rotation) as GameObject;
-            sphereClone.SetActive(true);
-            //sphereClone.GetComponent<SpawnSphere> ().SetAc
-
+			CmdSpawnSphere ();
             timeLeft = spawnTime;
 
         } else {
@@ -43,12 +35,20 @@ public class SpawnSphere : MonoBehaviour {
             timeLeft -= Time.deltaTime;
 
         }
-
-        
-
-        
-
     }
+
+	[Command]
+	void CmdSpawnSphere() {
+		Vector3 spawn_loc = (Random.Range(minSpawnDistance, maxSpawnDistance) * Random.insideUnitSphere) + center.transform.position;
+		while (spawn_loc.y < center.transform.position.y) {
+			spawn_loc = Random.Range(minSpawnDistance, maxSpawnDistance) * Random.insideUnitSphere;
+		}
+
+		GameObject sphereClone = Instantiate(sphere, spawn_loc, sphere.transform.rotation) as GameObject;
+		NetworkServer.Spawn(sphereClone);
+		sphereClone.SetActive(true);
+		//sphereClone.GetComponent<SpawnSphere> ().SetAc
+	}
 
     
 
